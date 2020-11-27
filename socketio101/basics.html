@@ -1,0 +1,22 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.3/socket.io.js" ></script>
+
+<script>
+    const socket = io("http://localhost:5800")
+    // let ws = new WebSocket("ws://localhost:5000");
+    console.log(socket);
+
+    socket.on("connect", data => {
+        socket.on("connect", msg => {
+            console.log(msg);
+        });
+        socket.emit("message", { data: "A open message from Client Browser!" });
+    });
+
+    // socket.onopen = (ev) => {
+    //     socket.send("A open message from Client Browser!");
+    // }
+
+    // socket.onmessage = (ev) => {
+    //     console.log(ev);
+    // }
+</script>
