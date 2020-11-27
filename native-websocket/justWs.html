@@ -1,0 +1,12 @@
+<script>
+    let ws = new WebSocket("ws://localhost:5000");
+    console.log(ws);
+
+    ws.onopen = (ev) => {
+        ws.send("A open message from Client Browser!");
+    }
+
+    ws.onmessage = (ev) => {
+        console.log(ev);
+    }
+</script>
